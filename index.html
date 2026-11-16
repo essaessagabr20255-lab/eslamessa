@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ============================================================
+       ESLAM ESSA GABR — Personal Portfolio
+       Single-file website: HTML5 + CSS3 + Vanilla JS (ES6+)
+       Sections: Hero / About / Stats / Experience / Skills /
+                 Projects / Education / Training / Contact / Footer
+       NOTE: Replace images by dropping files into ./assets/
+             (paths documented in the README instructions).
+       ============================================================ -->
+
+  <!-- Primary SEO metadata -->
+  <title>Eslam Essa Gabr — Founder &amp; CEO | Full-Stack Developer | Freelancing &amp; Career Consultant</title>
+  <meta name="description" content="Official portfolio of Eslam Essa Gabr — Founder &amp; CEO of Tamooh EdTech Platform, Full-Stack Developer and Freelancing &amp; Career Consultant from Port Said, Egypt. 3,000+ learners guided, 450+ freelancing success stories and 20+ web &amp; software projects delivered.">
+  <meta name="keywords" content="Eslam Essa Gabr, Full-Stack Developer, Founder, CEO, EdTech, Tamooh, Freelancing Consultant, Career Consultant, ERP Systems, Port Said, Egypt, Web Development, React, PHP, Node.js">
+  <meta name="author" content="Eslam Essa Gabr">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#05070f">
+
+  <!-- Open Graph (social sharing). Replace og:image with a 1200x630 image when available. -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Eslam Essa Gabr — Founder &amp; CEO | Full-Stack Developer">
+  <meta property="og:description" content="Founder &amp; CEO of Tamooh EdTech Platform. Full-Stack Developer, Freelancing &amp; Career Consultant. 3,000+ learners guided · 450+ freelancing success stories · 20+ projects delivered.">
+  <meta property="og:image" content="assets/profile.jpg">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Eslam Essa Gabr — Founder &amp; CEO | Full-Stack Developer">
+  <meta name="twitter:description" content="Founder &amp; CEO of Tamooh EdTech Platform · Full-Stack Developer · Freelancing &amp; Career Consultant.">
+  <meta name="twitter:image" content="assets/profile.jpg">
+
+  <!-- Favicon (inline SVG monogram, no extra file needed) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2338bdf8'/%3E%3Cstop offset='1' stop-color='%23a855f7'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='%230a0e1c'/%3E%3Crect x='1.5' y='1.5' width='61' height='61' rx='13' fill='none' stroke='url(%23g)' stroke-width='2'/%3E%3Ctext x='32' y='42' font-family='Arial, sans-serif' font-size='24' font-weight='800' fill='url(%23g)' text-anchor='middle'%3EEE%3C/text%3E%3C/svg%3E">
+
+  <!-- Fonts: Sora (headings) + Inter (body) + JetBrains Mono (accents) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <!-- Stylesheet (extracted to style.css) -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Skip link for keyboard users -->
+  <a href="#home" class="skip-link">Skip to main content</a>
+
+  <!-- Ambient background effects -->
+  <div class="bg-fx" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="grid-overlay"></div>
+  </div>
+
+  <!-- Preloader (auto-fades via CSS; removed by JS on load) -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader-mark">EE</div>
+    <div class="preloader-bar"></div>
+  </div>
+
+  <!-- Decorative custom cursor (pointer devices only, native cursor preserved) -->
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
+  <!-- ============================================================
+       NAVIGATION
+       ============================================================ -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="#home" class="logo" aria-label="Eslam Essa Gabr — back to top">
+        <span class="logo-mark">EE</span>
+        <span class="logo-text">Eslam <span>Essa Gabr</span></span>
+      </a>
+
+      <nav aria-label="Primary navigation">
+        <ul class="nav-links" id="primaryNav">
+          <li><a class="nav-link active" href="#home">Home</a></li>
+          <li><a class="nav-link" href="#about">About</a></li>
+          <li><a class="nav-link" href="#experience">Experience</a></li>
+          <li><a class="nav-link" href="#skills">Skills</a></li>
+          <li><a class="nav-link" href="#projects">Projects</a></li>
+          <li><a class="nav-link" href="#education">Education</a></li>
+          <li><a class="nav-link" href="#training">Training</a></li>
+          <li><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-cta">
+            <a href="#contact" class="btn btn-primary">Let's Talk <i class="fa-solid fa-arrow-right"></i></a>
+          </li>
+        </ul>
+      </nav>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-controls="primaryNav" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============================================================
+         A. HERO
+         ============================================================ -->
+    <section class="hero" id="home">
+      <div class="container hero-inner">
+
+        <div class="hero-text">
+          <span class="hero-tag"><i class="fa-solid fa-location-dot"></i> Port Fouad, Port Said — Egypt</span>
+
+          <h1 class="hero-name">Eslam <span class="grad-text">Essa Gabr</span></h1>
+
+          <p class="hero-title">
+            Founder &amp; CEO<span class="sep">|</span>Full-Stack Developer<span class="sep">|</span>Freelancing &amp; Career Consultant
+          </p>
+
+          <p class="typing-line" aria-hidden="true">
+            <span class="prefix">Expertise in&nbsp;</span><span class="typed" id="typed"></span><span class="type-cursor"></span>
+          </p>
+          <!-- Static equivalent of the typing animation for screen readers / SEO -->
+          <p class="sr-only">Expertise in full-stack development, EdTech entrepreneurship, ERP systems solutions, freelancing mentorship and career consulting.</p>
+
+          <p class="hero-intro">
+            I build modern web &amp; software products, lead <strong>Tamooh — an EdTech platform</strong> —
+            and train the next generation of freelancers. So far, that journey has guided
+            <strong>3,000+ learners</strong>, produced <strong>450+ freelancing success stories</strong>,
+            and delivered <strong>20+ projects</strong> across web, software and ERP systems.
+          </p>
+
+          <div class="hero-ctas">
+            <a href="#projects" class="btn btn-primary">Explore My Work <i class="fa-solid fa-arrow-down"></i></a>
+            <a href="assets/Eslam-Essa-Gabr-CV.pdf" download="Eslam-Essa-Gabr-CV.pdf" type="application/pdf" class="btn btn-ghost" id="cvBtn">
+              Download My CV <i class="fa-solid fa-file-arrow-down"></i>
+            </a>
+          </div>
+
+          <div class="hero-socials">
+            <span class="socials-label">Connect</span>
+            <a class="social-btn" href="mailto:eslamgabr500@gmail.com" aria-label="Email Eslam Essa Gabr"><i class="fa-solid fa-envelope"></i></a>
+            <a class="social-btn" href="https://wa.me/201279490126" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            <a class="social-btn" href="https://linkedin.com/in/eslam-essa-6983a9353" target="_blank" rel="noopener" aria-label="LinkedIn profile"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a class="social-btn" href="tel:+201279490126" aria-label="Call Eslam Essa Gabr"><i class="fa-solid fa-phone"></i></a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="profile-frame">
+            <!-- Replace with your photo: place your image at ./assets/profile.jpg -->
+            <img class="profile-img" src="assets/profile.jpg"
+                 alt="Portrait of Eslam Essa Gabr — Founder &amp; CEO, Full-Stack Developer"
+                 data-ph="Eslam Essa Gabr" width="800" height="880" fetchpriority="high">
+          </div>
+
+          <!-- Floating credibility chips (facts from the CV) -->
+          <div class="fchip fchip-1">
+            <i class="fa-solid fa-rocket"></i>
+            <div><div class="fchip-t">Founder &amp; CEO</div><div class="fchip-s">Tamooh EdTech Platform</div></div>
+          </div>
+          <div class="fchip fchip-2">
+            <i class="fa-solid fa-user-graduate"></i>
+            <div><div class="fchip-t">3,000+ Learners</div><div class="fchip-s">Guided &amp; Mentored</div></div>
+          </div>
+          <div class="fchip fchip-3">
+            <i class="fa-solid fa-briefcase"></i>
+            <div><div class="fchip-t">5+ Years</div><div class="fchip-s">Professional Experience</div></div>
+          </div>
+        </div>
+
+      </div>
+      <div class="scroll-hint" aria-hidden="true"><div class="mouse"></div>Scroll</div>
+    </section>
+
+    <!-- ============================================================
+         B. ABOUT ME
+         ============================================================ -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-tag">About Me</span>
+          <h2 class="section-title">Turning Ideas Into <span class="grad-text">Digital Reality</span></h2>
+          <p class="section-sub">Engineer by craft, entrepreneur by mindset, mentor by passion.</p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-text reveal-left">
+            <p class="about-lead">
+              I'm <strong>Eslam Essa Gabr</strong> — a software engineer and full-stack developer from
+              Port Said, Egypt, and the <strong>Founder &amp; CEO of Tamooh EdTech Platform</strong>.
+              My work sits at the intersection of <strong>software engineering, educational technology,
+              entrepreneurship and business development</strong>: I design and ship digital products,
+              grow an EdTech venture, and help people build careers that actually last.
+            </p>
+            <p>
+              On the technical side, I deliver complete web and software solutions — from responsive
+              frontends to robust backends, RESTful APIs and <strong>ERP systems</strong> — with more than
+              20 delivered projects and a 90% goal-achievement rate across ERP engagements. I hold a
+              Software Engineering Diploma from ALX Africa and a Bachelor of Science in Specific
+              Education from Port Said University, a combination that shapes how I build technology
+              and how I teach it.
+            </p>
+            <p>
+              On the human side, I've dedicated my career to <strong>freelancing training and career
+              development</strong>. As a trainer and mentor working with organizations such as ITI, NTI,
+              DEPI, Career 180, Freelance Yard and Creativa Innovation Hub — and through entrepreneurship
+              and incubation training with ITIDA &amp; TIEC — I've guided more than 3,000 students and
+              trainees and celebrated 450+ freelancing success stories.
+            </p>
+
+            <div class="focus-cards">
+              <div class="focus-card glass reveal d1">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <h3>EdTech &amp; Entrepreneurship</h3>
+                <p>Founding and scaling Tamooh, managing EdTech products and building strategic partnerships.</p>
+              </div>
+              <div class="focus-card glass reveal d2">
+                <i class="fa-solid fa-code"></i>
+                <h3>Full-Stack Development</h3>
+                <p>Web &amp; software projects from frontend to backend — including ERP implementations and APIs.</p>
+              </div>
+              <div class="focus-card glass reveal d3">
+                <i class="fa-solid fa-chalkboard-user"></i>
+                <h3>Training &amp; Career Growth</h3>
+                <p>Freelancing mentorship, career coaching, curriculum design and public speaking.</p>
+              </div>
+            </div>
+          </div>
+
+          <aside class="facts-card glass reveal-right reveal d2" aria-label="Quick facts about Eslam Essa Gabr">
+            <h3><i class="fa-solid fa-id-badge"></i> Quick Facts</h3>
+            <div class="fact-item">
+              <i class="fa-solid fa-location-dot"></i>
+              <div><div class="f-label">Location</div><div class="f-value">Port Fouad, Port Said, Egypt</div></div>
+            </div>
+            <div class="fact-item">
+              <i class="fa-solid fa-envelope"></i>
+              <div><div class="f-label">Email</div><div class="f-value"><a href="mailto:eslamgabr500@gmail.com">eslamgabr500@gmail.com</a></div></div>
+            </div>
+            <div class="fact-item">
+              <i class="fa-solid fa-graduation-cap"></i>
+              <div><div class="f-label">Engineering Education</div><div class="f-value">Software Engineering Diploma — ALX Africa</div></div>
+            </div>
+            <div class="fact-item">
+              <i class="fa-solid fa-building-columns"></i>
+              <div><div class="f-label">Academic Degree</div><div class="f-value">BSc in Specific Education — Port Said University</div></div>
+            </div>
+            <div class="fact-item">
+              <i class="fa-solid fa-lightbulb"></i>
+              <div><div class="f-label">Venture</div><div class="f-value"><a href="https://tamooh.cloud" target="_blank" rel="noopener">tamooh.cloud</a> — EdTech Platform</div></div>
+            </div>
+            <div class="fact-item">
+              <i class="fa-solid fa-handshake"></i>
+              <div><div class="f-label">Connect</div><div class="f-value"><a href="https://linkedin.com/in/eslam-essa-6983a9353" target="_blank" rel="noopener">linkedin.com/in/eslam-essa-6983a9353</a></div></div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         C. ACHIEVEMENT STATISTICS
+         ============================================================ -->
+    <section class="stats-section" id="stats" aria-label="Achievement statistics">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-card glass reveal-scale reveal">
+            <div class="stat-icon"><i class="fa-solid fa-user-graduate"></i></div>
+            <div class="stat-num grad-text"><span class="counter" data-target="3000" data-suffix="+">0</span></div>
+            <div class="stat-label">Students &amp; Trainees Guided</div>
+          </div>
+          <div class="stat-card glass reveal-scale reveal d1">
+            <div class="stat-icon"><i class="fa-solid fa-trophy"></i></div>
+            <div class="stat-num grad-text"><span class="counter" data-target="450" data-suffix="+">0</span></div>
+            <div class="stat-label">Freelancing Success Stories</div>
+          </div>
+          <div class="stat-card glass reveal-scale reveal d2">
+            <div class="stat-icon"><i class="fa-solid fa-code"></i></div>
+            <div class="stat-num grad-text"><span class="counter" data-target="20" data-suffix="+">0</span></div>
+            <div class="stat-label">Web &amp; Software Projects</div>
+          </div>
+          <div class="stat-card glass reveal-scale reveal d3">
+            <div class="stat-icon"><i class="fa-solid fa-gears"></i></div>
+            <div class="stat-num grad-text"><span class="counter" data-target="90" data-suffix="%">0</span></div>
+            <div class="stat-label">ERP Goal Achievement Rate</div>
+          </div>
+          <div class="stat-card glass reveal-scale reveal d4">
+            <div class="stat-icon"><i class="fa-solid fa-briefcase"></i></div>
+            <div class="stat-num grad-text"><span class="counter" data-target="5" data-suffix="+">0</span></div>
+            <div class="stat-label">Years of Professional Experience</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         D. PROFESSIONAL EXPERIENCE — INTERACTIVE TIMELINE
+         The stage chips below use role labels because exact dates were
+         not available. Replace each chip text (e.g. "2021 — Present")
+         with the exact dates from the CV.
+         ============================================================ -->
+    <section class="section" id="experience">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-tag">Professional Experience</span>
+          <h2 class="section-title">A Journey of <span class="grad-text">Building &amp; Empowering</span></h2>
+          <p class="section-sub">From shipping software to founding a platform and mentoring hundreds of freelancers.</p>
+        </div>
+
+        <div class="timeline">
+          <!-- Entry 1 -->
+          <div class="tl-item reveal">
+            <span class="tl-dot" aria-hidden="true"></span>
+            <article class="tl-card glass">
+              <!-- TODO(user): replace chip with exact dates from CV, e.g. "2022 — Present" -->
+              <span class="tl-badge"><i class="fa-solid fa-clock"></i> Present</span>
+              <h3 class="tl-role">Founder &amp; CEO</h3>
+              <p class="tl-org"><i class="fa-solid fa-building"></i> Tamooh EdTech Platform · tamooh.cloud</p>
+              <ul class="tl-points">
+                <li><i class="fa-solid fa-check"></i> Founded and lead a cloud-based EdTech platform serving learners through structured digital education.</li>
+                <li><i class="fa-solid fa-check"></i> Drive product strategy, curriculum design and platform growth end-to-end.</li>
+                <li><i class="fa-solid fa-check"></i> Build strategic partnerships and lead business development for the venture.</li>
+              </ul>
+            </article>
+          </div>
+
+          <!-- Entry 2 -->
+          <div class="tl-item reveal">
+            <span class="tl-dot" aria-hidden="true"></span>
+            <article class="tl-card glass">
+              <!-- TODO(user): replace chip with exact dates from CV -->
+              <span class="tl-badge"><i class="fa-solid fa-laptop-code"></i> Independent Practice</span>
+              <h3 class="tl-role">Full-Stack Developer &amp; ERP Specialist</h3>
+              <p class="tl-org"><i class="fa-solid fa-building"></i> Freelance — Web, Software &amp; ERP Projects</p>
+              <ul class="tl-points">
+                <li><i class="fa-solid fa-check"></i> Delivered 20+ web &amp; software projects from planning to deployment.</li>
+                <li><i class="fa-solid fa-check"></i> Implemented ERP solutions with a 90% goal-achievement rate.</li>
+                <li><i class="fa-solid fa-check"></i> Build with technologies including React, PHP, Node.js, MySQL, C# and Python.</li>
+              </ul>
+            </article>
+          </div>
+
+          <!-- Entry 3 -->
+          <div class="tl-item reveal">
+            <span class="tl-dot" aria-hidden="true"></span>
+            <article class="tl-card glass">
+              <!-- TODO(user): replace chip with exact dates from CV -->
+              <span class="tl-badge"><i class="fa-solid fa-chalkboard-user"></i> Training &amp; Mentorship</span>
+              <h3 class="tl-role">Freelancing Trainer &amp; Career Mentor</h3>
+              <p class="tl-org"><i class="fa-solid fa-building"></i> ITI · NTI · DEPI · Career 180 · Freelance Yard · Creativa Innovation Hub</p>
+              <ul class="tl-points">
+                <li><i class="fa-solid fa-check"></i> Guided 3,000+ students and trainees toward sustainable freelance careers.</li>
+                <li><i class="fa-solid fa-check"></i> Supported 450+ freelancing success stories through mentorship and coaching.</li>
+                <li><i class="fa-solid fa-check"></i> Design curricula, deliver workshops and speak on freelancing and career development.</li>
+              </ul>
+            </article>
+          </div>
+
+          <!-- Entry 4 -->
+          <div class="tl-item reveal">
+            <span class="tl-dot" aria-hidden="true"></span>
+            <article class="tl-card glass">
+              <!-- TODO(user): replace chip with exact dates from CV -->
+              <span class="tl-badge"><i class="fa-solid fa-seedling"></i> Entrepreneurship &amp; Incubation</span>
+              <h3 class="tl-role">Entrepreneurship &amp; Incubation Training</h3>
+              <p class="tl-org"><i class="fa-solid fa-building"></i> ITIDA &amp; TIEC</p>
+              <ul class="tl-points">
+                <li><i class="fa-solid fa-check"></i> Completed entrepreneurship and incubation training programs.</li>
+                <li><i class="fa-solid fa-check"></i> Focused on startup founding, business development and strategic partnerships.</li>
+                <li><i class="fa-solid fa-check"></i> Applied incubation learnings directly to building the Tamooh venture.</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         E. SKILLS & TECHNOLOGIES
+         ============================================================ -->
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-tag">Skills &amp; Technologies</span>
+          <h2 class="section-title">My <span class="grad-text">Toolkit</span></h2>
+          <p class="section-sub">A versatile stack spanning code, business and people — built over 5+ years of real projects.</p>
+        </div>
+
+        <div class="skills-grid">
+          <!-- Frontend -->
+          <div class="skill-card glass reveal" style="--ac:#38bdf8">
+            <div class="skill-card-head">
+              <span class="skill-cat-icon"><i class="fa-solid fa-desktop"></i></span>
+              <h3>Frontend</h3>
+              <span class="chip-count">6</span>
+            </div>
+            <div class="chips">
+              <span class="chip"><i class="fa-brands fa-html5"></i>HTML5</span>
+              <span class="chip"><i class="fa-brands fa-css3-alt"></i>CSS3</span>
+              <span class="chip"><i class="fa-brands fa-js"></i>JavaScript</span>
+              <span class="chip"><i class="fa-brands fa-react"></i>React.js</span>
+              <span class="chip"><i class="fa-brands fa-bootstrap"></i>Bootstrap</span>
+              <span class="chip"><i class="fa-solid fa-wind"></i>Tailwind CSS</span>
+            </div>
+          </div>
+
+          <!-- Backend -->
+          <div class="skill-card glass reveal d1" style="--ac:#8b5cf6">
+            <div class="skill-card-head">
+              <span class="skill-cat-icon"><i class="fa-solid fa-server"></i></span>
+              <h3>Backend</h3>
+              <span class="chip-count">4</span>
+            </div>
+            <div class="chips">
+              <span class="chip"><i class="fa-brands fa-php"></i>PHP</span>
+              <span class="chip"><i class="fa-brands fa-node-js"></i>Node.js</span>
+              <span class="chip"><i class="fa-solid fa-database"></i>MySQL</span>
+              <span class="chip"><i class="fa-solid fa-plug"></i>RESTful APIs</span>
+            </div>
+          </div>
+
+          <!-- Desktop & Mobile -->
+          <div class="skill-card glass reveal d2" style="--ac:#34d399">
+            <div class="skill-card-head">
+              <span class="skill-cat-icon"><i class="fa-solid fa-mobile-screen"></i></span>
+              <h3>Desktop &amp; Mobile</h3>
+              <span class="chip-count">5</span>
+            </div>
+            <div class="chips">
+              <span class="chip"><i class="fa-solid fa-hashtag"></i>C#</span>
+              <span class="chip"><i class="fa-solid fa-code"></i>C++</span>
+              <span class="chip"><i class="fa-brands fa-python"></i>Python</span>
+              <span class="chip"><i class="fa-solid fa-gears"></i>ERP Systems</span>
+              <span class="chip"><i class="fa-solid fa-mobile-screen-button"></i>Mobile App Development</span>
+            </div>
+          </div>
+
+          <!-- Business & Entrepreneurship -->
+          <div class="skill-card glass reveal" style="--ac:#fbbf24">
+            <div class="skill-card-head">
+              <span class="skill-cat-icon"><i class="fa-solid fa-chart-line"></i></span>
+              <h3>Business &amp; Entrepreneurship</h3>
+              <span class="chip-count">4</span>
+            </div>
+            <div class="chips">
+              <span class="chip"><i class="fa-solid fa-rocket"></i>Startup Founding</span>
+              <span class="chip"><i class="fa-solid fa-chart-line"></i>Business Development</span>
+              <span class="chip"><i class="fa-solid fa-handshake"></i>Strategic Partnerships</span>
+              <span class="chip"><i class="fa-solid fa-graduation-cap"></i>EdTech Management</span>
+            </div>
+          </div>
+
+          <!-- Training & Soft Skills -->
+          <div class="skill-card glass reveal d1" style="--ac:#f472b6">
+            <div class="skill-card-head">
+              <span class="skill-cat-icon"><i class="fa-solid fa-person-chalkboard"></i></span>
+              <h3>Training &amp; Soft Skills</h3>
+              <span class="chip-count">4</span>
+            </div>
+            <div class="chips">
+              <span class="chip"><i class="fa-solid fa-users"></i>Freelancing Mentorship</span>
+              <span class="chip"><i class="fa-solid fa-compass"></i>Career Coaching</span>
+              <span class="chip"><i class="fa-solid fa-microphone-lines"></i>Public Speaking</span>
+              <span class="chip"><i class="fa-solid fa-book-open"></i>Curriculum Design</span>
+            </div>
+          </div>
+
+          <!-- Creative Tools -->
+          <div class="skill-card glass reveal d2" style="--ac:#fb7185">
+            <div class="skill-card-head">
+              <span class="skill-cat-icon"><i class="fa-solid fa-palette"></i></span>
+              <h3>Creative Tools</h3>
+              <span class="chip-count">3</span>
+            </div>
+            <div class="chips">
+              <span class="chip"><i class="fa-solid fa-paintbrush"></i>Adobe Photoshop</span>
+              <span class="chip"><i class="fa-solid fa-pen-nib"></i>Adobe Illustrator</span>
+              <span class="chip"><i class="fa-solid fa-film"></i>Video Editing</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         F. FEATURED PROJECTS
+         HOW TO ADD MORE PROJECTS: duplicate the "project-featured"
+         block below, update the image path (assets/projects/...),
+         description, tags and buttons. Image files go to
+         ./assets/projects/ — see README instructions.
+         ============================================================ -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-tag">Featured Projects</span>
+          <h2 class="section-title">Work That <span class="grad-text">Speaks</span></h2>
+          <p class="section-sub">Flagship ventures and delivered solutions — real products, real users.</p>
+        </div>
+
+        <!-- Featured project: Tamooh EdTech Platform -->
+        <article class="project-featured glass reveal" id="tamooh">
+          <div class="project-img-wrap" data-tilt>
+            <span class="project-flag">Flagship Venture</span>
+            <!-- Replace with your screenshot: place it at ./assets/projects/tamooh.jpg -->
+            <img src="assets/projects/tamooh.jpg"
+                 alt="Tamooh EdTech Platform — project preview"
+                 data-ph="Tamooh EdTech Platform" loading="lazy" decoding="async">
+          </div>
+          <div class="project-body">
+            <p class="project-kicker">Founder &amp; CEO · EdTech</p>
+            <h3>Tamooh EdTech Platform</h3>
+            <p>
+              My flagship venture — a cloud-based educational technology platform built to deliver
+              structured, engaging learning experiences and support learners through their educational
+              journey. I lead the platform's product direction, growth and strategic partnerships.
+            </p>
+            <div class="project-tags">
+              <span class="tag">EdTech</span>
+              <span class="tag">Web Platform</span>
+              <span class="tag">Digital Learning</span>
+              <span class="tag">Product Strategy</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://tamooh.cloud" target="_blank" rel="noopener" class="btn btn-primary btn-sm">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Visit Live Platform
+              </a>
+              <a href="#contact" class="btn btn-ghost btn-sm"><i class="fa-solid fa-comments"></i> Ask About It</a>
+              <!-- GitHub button: uncomment and add your repository URL when applicable
+              <a href="https://github.com/your-username/your-repo" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">
+                <i class="fa-brands fa-github"></i> Source Code
+              </a>
+              -->
+            </div>
+          </div>
+        </article>
+
+        <!-- Aggregate project archive (fact from the CV: 20+ delivered projects) -->
+        <div class="project-archive reveal">
+          <div class="archive-icon"><i class="fa-solid fa-layer-group"></i></div>
+          <div class="archive-body">
+            <h3>20+ Web &amp; Software Projects Delivered</h3>
+            <p>
+              From responsive websites to full software systems and ERP implementations —
+              delivered end-to-end, from planning to deployment. Detailed case studies are
+              shared on request.
+            </p>
+          </div>
+          <a href="#contact" class="btn btn-ghost"><i class="fa-solid fa-paper-plane"></i> Discuss a Project</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         G. EDUCATION & CERTIFICATIONS
+         ============================================================ -->
+    <section class="section" id="education">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-tag">Education &amp; Certifications</span>
+          <h2 class="section-title">Foundations of <span class="grad-text">Knowledge</span></h2>
+          <p class="section-sub">Formal education and professional programs that power both my engineering and my teaching.</p>
+        </div>
+
+        <div class="edu-grid">
+          <div class="edu-card glass reveal">
+            <div class="edu-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+            <h3>Software Engineering Diploma</h3>
+            <p class="edu-org"><i class="fa-solid fa-building"></i> ALX Africa</p>
+            <span class="edu-type">Diploma</span>
+          </div>
+          <div class="edu-card glass reveal d1">
+            <div class="edu-icon"><i class="fa-solid fa-building-columns"></i></div>
+            <h3>Bachelor of Science in Specific Education</h3>
+            <p class="edu-org"><i class="fa-solid fa-building"></i> Port Said University</p>
+            <span class="edu-type">Bachelor's Degree</span>
+          </div>
+          <div class="edu-card glass reveal d2">
+            <div class="edu-icon"><i class="fa-solid fa-certificate"></i></div>
+            <h3>Entrepreneurship and Incubation Training</h3>
+            <p class="edu-org"><i class="fa-solid fa-building"></i> ITIDA &amp; TIEC</p>
+            <span class="edu-type">Professional Training</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         H. TRAINING & LEADERSHIP
+         One-line engagement descriptions are generic by design —
+         refine them with the exact roles from the CV when available.
+         ============================================================ -->
+    <section class="section" id="training">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-tag">Training &amp; Leadership</span>
+          <h2 class="section-title">Empowering the Next Generation of <span class="grad-text">Freelancers</span></h2>
+          <p class="section-sub">As a trainer and mentor, I partner with leading national technology and entrepreneurship organizations.</p>
+        </div>
+
+        <div class="impact-strip reveal">
+          <span class="impact-item"><i class="fa-solid fa-users"></i><strong>3,000+</strong> Learners &amp; Trainees</span>
+          <span class="impact-item"><i class="fa-solid fa-award"></i><strong>450+</strong> Freelancing Success Stories</span>
+          <span class="impact-item"><i class="fa-solid fa-book-open"></i>Curriculum Design &amp; <strong>Public Speaking</strong></span>
+        </div>
+
+        <div class="org-grid">
+          <div class="org-card glass reveal">
+            <div class="org-mark">ITI</div>
+            <h3>ITI</h3>
+            <p class="org-full">Information Technology Institute</p>
+            <p class="org-role">Freelancing &amp; career-skills training</p>
+          </div>
+          <div class="org-card glass reveal d1">
+            <div class="org-mark">NTI</div>
+            <h3>NTI</h3>
+            <p class="org-full">National Telecommunication Institute</p>
+            <p class="org-role">Training &amp; mentorship engagement</p>
+          </div>
+          <div class="org-card glass reveal d2">
+            <div class="org-mark">DEPI</div>
+            <h3>DEPI</h3>
+            <p class="org-full">Digital Egypt Pioneers Initiative</p>
+            <p class="org-role">Freelancing mentorship</p>
+          </div>
+          <div class="org-card glass reveal d3">
+            <div class="org-mark">C180</div>
+            <h3>Career 180</h3>
+            <p class="org-full">Career development platform</p>
+            <p class="org-role">Career coaching &amp; guidance</p>
+          </div>
+          <div class="org-card glass reveal">
+            <div class="org-mark">FY</div>
+            <h3>Freelance Yard</h3>
+            <p class="org-full">Freelancing community &amp; training</p>
+            <p class="org-role">Freelancing mentorship</p>
+          </div>
+          <div class="org-card glass reveal d1">
+            <div class="org-mark">CIH</div>
+            <h3>Creativa Innovation Hub</h3>
+            <p class="org-full">Innovation &amp; entrepreneurship hub</p>
+            <p class="org-role">Training &amp; innovation programs</p>
+          </div>
+          <div class="org-card glass reveal d2">
+            <div class="org-mark">ITIDA</div>
+            <h3>ITIDA</h3>
+            <p class="org-full">Information Technology Industry Development Agency</p>
+            <p class="org-role">Entrepreneurship &amp; incubation training</p>
+          </div>
+          <div class="org-card glass reveal d3">
+            <div class="org-mark">TIEC</div>
+            <h3>TIEC</h3>
+            <p class="org-full">Technology Innovation &amp; Entrepreneurship Center</p>
+            <p class="org-role">Entrepreneurship &amp; incubation training</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         I. CONTACT
+         ============================================================ -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-tag">Get In Touch</span>
+          <h2 class="section-title">Let's Build Something <span class="grad-text">Great</span></h2>
+          <p class="section-sub">A project idea, a partnership opportunity, or a training request — my inbox is always open.</p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-cards reveal-left reveal">
+            <div class="contact-card glass">
+              <span class="contact-ico"><i class="fa-solid fa-envelope"></i></span>
+              <div>
+                <div class="c-label">Email</div>
+                <div class="c-value"><a href="mailto:eslamgabr500@gmail.com">eslamgabr500@gmail.com</a></div>
+              </div>
+            </div>
+            <div class="contact-card glass">
+              <span class="contact-ico"><i class="fa-solid fa-phone"></i></span>
+              <div>
+                <div class="c-label">Phone</div>
+                <div class="c-value"><a href="tel:+201279490126">+20 127 949 0126</a></div>
+              </div>
+            </div>
+            <div class="contact-card glass">
+              <span class="contact-ico"><i class="fa-brands fa-whatsapp"></i></span>
+              <div>
+                <div class="c-label">WhatsApp</div>
+                <div class="c-value"><a href="https://wa.me/201279490126" target="_blank" rel="noopener">Message me directly</a></div>
+              </div>
+            </div>
+            <div class="contact-card glass">
+              <span class="contact-ico"><i class="fa-brands fa-linkedin-in"></i></span>
+              <div>
+                <div class="c-label">LinkedIn</div>
+                <div class="c-value"><a href="https://linkedin.com/in/eslam-essa-6983a9353" target="_blank" rel="noopener">Connect with me</a></div>
+              </div>
+            </div>
+            <div class="contact-card glass">
+              <span class="contact-ico"><i class="fa-solid fa-location-dot"></i></span>
+              <div>
+                <div class="c-label">Location</div>
+                <div class="c-value">Port Fouad, Port Said, Egypt</div>
+              </div>
+            </div>
+
+            <div class="contact-note">
+              <i class="fa-solid fa-bolt"></i>
+              <p>Fastest response: WhatsApp or email. I usually reply within one business day.</p>
+            </div>
+          </div>
+
+          <form class="contact-form glass reveal-right reveal" id="contactForm" novalidate>
+            <h3>Send a Message</h3>
+            <p class="form-hint">
+              Fill the form and your email app will open with everything pre-filled —
+              no data is stored on this site.
+            </p>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="cf-name">Your Name</label>
+                <input type="text" id="cf-name" name="name" placeholder="John Smith" autocomplete="name" required>
+              </div>
+              <div class="form-field">
+                <label for="cf-email">Your Email</label>
+                <input type="email" id="cf-email" name="email" placeholder="john@company.com" autocomplete="email" required>
+              </div>
+            </div>
+            <div class="form-field">
+              <label for="cf-subject">Subject</label>
+              <input type="text" id="cf-subject" name="subject" placeholder="Project inquiry / Partnership / Training request" required>
+            </div>
+            <div class="form-field">
+              <label for="cf-message">Message</label>
+              <textarea id="cf-message" name="message" placeholder="Tell me about your idea, project or goals..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       J. FOOTER
+       ============================================================ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#home" class="logo" aria-label="Back to top">
+            <span class="logo-mark">EE</span>
+            <span class="logo-text">Eslam <span>Essa Gabr</span></span>
+          </a>
+          <p>
+            Founder &amp; CEO of Tamooh EdTech Platform · Full-Stack Developer ·
+            Freelancing &amp; Career Consultant — building products, businesses and careers from Port Said, Egypt.
+          </p>
+          <div class="footer-socials">
+            <a class="social-btn" href="mailto:eslamgabr500@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+            <a class="social-btn" href="https://wa.me/201279490126" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            <a class="social-btn" href="https://linkedin.com/in/eslam-essa-6983a9353" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a class="social-btn" href="tel:+201279490126" aria-label="Phone"><i class="fa-solid fa-phone"></i></a>
+          </div>
+        </div>
+
+        <div>
+          <h4><i class="fa-solid fa-link"></i> Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="#about"><i class="fa-solid fa-chevron-right"></i> About Me</a></li>
+            <li><a href="#experience"><i class="fa-solid fa-chevron-right"></i> Experience</a></li>
+            <li><a href="#skills"><i class="fa-solid fa-chevron-right"></i> Skills</a></li>
+            <li><a href="#projects"><i class="fa-solid fa-chevron-right"></i> Projects</a></li>
+            <li><a href="#training"><i class="fa-solid fa-chevron-right"></i> Training &amp; Leadership</a></li>
+            <li><a href="#contact"><i class="fa-solid fa-chevron-right"></i> Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4><i class="fa-solid fa-address-card"></i> Get in Touch</h4>
+          <ul class="footer-contact">
+            <li><i class="fa-solid fa-envelope"></i><a href="mailto:eslamgabr500@gmail.com">eslamgabr500@gmail.com</a></li>
+            <li><i class="fa-solid fa-phone"></i><a href="tel:+201279490126">+20 127 949 0126</a></li>
+            <li><i class="fa-brands fa-whatsapp"></i><a href="https://wa.me/201279490126" target="_blank" rel="noopener">WhatsApp chat</a></li>
+            <li><i class="fa-solid fa-location-dot"></i><span>Port Fouad, Port Said, Egypt</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© <span id="year">2026</span> <span class="grad-text">Eslam Essa Gabr</span>. All rights reserved.</p>
+        <p>Designed &amp; built with care — single-file HTML5 · CSS3 · JavaScript.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button class="to-top" id="toTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <!-- Toast notifications -->
+  <div class="toast" id="toast" role="status" aria-live="polite">
+    <i class="fa-solid fa-circle-info" id="toastIcon"></i>
+    <span id="toastMsg"></span>
+  </div>
+
+  <!-- ============================================================
+       JAVASCRIPT (Vanilla ES6+)
+       Sections: config → helpers → preloader → navbar → typing →
+       reveal → counters → image fallbacks → CV download →
+       contact form → back-to-top → custom cursor → tilt → year
+       ============================================================ -->
+  <!-- Script (extracted to script.js) -->
+  <script src="script.js"></script>
+</body>
+</html>
